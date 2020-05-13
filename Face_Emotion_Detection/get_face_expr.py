@@ -173,7 +173,7 @@ while True:
         cv2.putText(frame, emotion_dict[maxindex], (x+10, y-60), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
 
     cv2.imshow('Video', cv2.resize(frame,(720,620),interpolation = cv2.INTER_CUBIC))
-    if(count_sad>=5):
+    if(count_sad>=10):
         send_mail()
         print("Mail Sent successfully")
         count_sad=0 #intialize to zero after notify
