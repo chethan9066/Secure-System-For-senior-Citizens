@@ -95,7 +95,7 @@ def send_mail():
                main()
 
 # Define data generators
-train_dir = base_path+'train'
+"""train_dir = base_path+'train'
 val_dir = base_path+'validation'
 
 num_train = len(train_dir)
@@ -118,7 +118,7 @@ validation_generator = val_datagen.flow_from_directory(
         target_size=(48,48),
         batch_size=batch_size,
         color_mode="grayscale",
-        class_mode='categorical')
+        class_mode='categorical')"""
 
 # Create the model
 model = Sequential()
@@ -139,7 +139,7 @@ model.add(Dense(1024, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(7, activation='softmax'))
 
-model.load_weights('/home/chethan/Desktop/test/Emotion-detection/src/data/Model_Save/model.h5')
+model.load_weights('Model_Save/model.h5')
 
 # prevents openCL usage and unnecessary logging messages
 cv2.ocl.setUseOpenCL(False)
