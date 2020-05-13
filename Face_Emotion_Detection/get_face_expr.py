@@ -21,6 +21,7 @@ from keras.layers import MaxPooling2D
 from keras.preprocessing.image import ImageDataGenerator
 from keras.applications import VGG16
 import os
+import threading
 #importing SMTP Library
 import smtplib
 from string import Template
@@ -88,10 +89,10 @@ def main():
             # Terminate the SMTP session and close the connection
             s.quit()
 
-def send_mail():
 
-        if __name__ == '__main__':
-            main()
+def send_mail():
+      if __name__ == '__main__':
+               main()
 
 # Define data generators
 train_dir = base_path+'train'
@@ -154,7 +155,7 @@ while True:
     frame = imutils.resize(frame, width=720)
     if not ret:
         break
-    facecasc = cv2.CascadeClassifier('/home/chethan/Desktop/test/Emotion-detection/src/haarcascade_frontalface_default.xml')
+    facecasc = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = facecasc.detectMultiScale(gray,scaleFactor=1.3, minNeighbors=5)
 
@@ -173,8 +174,10 @@ while True:
         cv2.putText(frame, emotion_dict[maxindex], (x+10, y-60), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
 
     cv2.imshow('Video', cv2.resize(frame,(720,620),interpolation = cv2.INTER_CUBIC))
-    if(count_sad>=10):
-        send_mail()
+   
+    if(count_sad>=5):
+        mail_thread=threading.Thread(target=send_mail)
+        mail_thread.start()
         print("Mail Sent successfully")
         count_sad=0 #intialize to zero after notify
 
