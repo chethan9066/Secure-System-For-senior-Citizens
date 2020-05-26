@@ -22,6 +22,7 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.applications import VGG16
 import os
 import threading
+from twilio.rest import Client #Call API
 #importing SMTP Library
 import smtplib
 from string import Template
@@ -54,8 +55,8 @@ def read_template(filename):
             return Template(template_file_content)
 
 def main():
-            MY_ADDRESS = 'securesystem57@gmail.com'
-            PASSWORD = 'securesystem2020'
+            MY_ADDRESS = os.environ['EMAIL']
+            PASSWORD = os.environ['EMAIL_PWD']
             names, emails = get_contacts('contacts.txt') # read contacts
             message_template = read_template('msg.txt')
 
@@ -94,6 +95,20 @@ def send_mail():
       if __name__ == '__main__':
                main()
 
+def make_phone_call():
+    account_sid = os.environ['TWILIO_SID']
+    auth_token = os.environ['TWILIO_AUTH_TOKEN']
+    client = Client(account_sid, auth_token)
+
+    call = client.calls.create(
+                            twiml='<Response><Say>please take care of Your parents they seems SAD today</Say></Response>',
+                            to=os.environ['MY_NUMBER'],
+                            from_='+19094559497'
+                        )
+
+    print("call connceted succfully")
+    print(call.sid)
+    
 # Define data generators
 """train_dir = base_path+'train'
 val_dir = base_path+'validation'
@@ -175,10 +190,13 @@ while True:
 
     cv2.imshow('Video', cv2.resize(frame,(720,620),interpolation = cv2.INTER_CUBIC))
    
-    if(count_sad>=5):
+    if(count_sad>=5 and count_sad < 10):
         mail_thread=threading.Thread(target=send_mail)
         mail_thread.start()
         print("Mail Sent successfully")
+    if(count_sad>=30): #if Sadness continue then call to care taker
+        call_thread=threading.Thread(target=make_phone_call)
+        call_thread.start()
         count_sad=0 #intialize to zero after notify
 
     k = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
