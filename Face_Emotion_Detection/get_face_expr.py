@@ -27,7 +27,7 @@ import smtplib
 from string import Template
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-base_path="/home/chethan/Desktop/test/Emotion-detection/src/data/face-expression-recognition-dataset/images/images/"
+
 
 def get_contacts(filename):
             """
@@ -56,8 +56,8 @@ def read_template(filename):
 def main():
             MY_ADDRESS = 'securesystem57@gmail.com'
             PASSWORD = 'securesystem2020'
-            names, emails = get_contacts('/home/chethan/Desktop/test/Emotion-detection/src/contacts.txt') # read contacts
-            message_template = read_template('/home/chethan/Desktop/test/Emotion-detection/src/msg.txt')
+            names, emails = get_contacts('contacts.txt') # read contacts
+            message_template = read_template('msg.txt')
 
             # set up the SMTP server
             s = smtplib.SMTP('smtp.gmail.com', 587)
