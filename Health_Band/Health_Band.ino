@@ -1,6 +1,6 @@
 #include<DallasTemperature.h>
 #include<OneWire.h>
-#define ONE_WIRE_BUS 15  // D2 Pin of NodeMCU
+#define ONE_WIRE_BUS 13  // D7 Pin of NodeMCU
 #define CAYENNE_PRINT Serial
 #include <CayenneMQTTESP8266.h>
 #include <MPU6050.h>
@@ -137,7 +137,7 @@ void loop()
     sensors.requestTemperatures();                // Send the command to get temperatures  
     Serial.println("Temperature is: ");
     temp= sensors.getTempCByIndex(0);  // Why "byIndex"? You can have more than one IC on the same bus. 0 refers to the first IC on the wire  
-    Serial.print(temp);  //31 C is normal temp in wrist
+    Serial.print(temp);  //31 C is normal temp on wrist
     Serial.println("\u2103");  
   
    New_Pulse=analogRead(Pulse); //Reading input from A0 pin
