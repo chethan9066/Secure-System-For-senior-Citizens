@@ -10,12 +10,11 @@ Folder Strucure For Face Expression Detection:<br>
 *DataSet/Data/face-expression-recognition-dataset/images/train*<br>
 *DataSet/Data/face-expression-recognition-dataset/images/validation*<br>
   <br>    
-<<<<<<< HEAD
 <p> <a href="https://www.kaggle.com/jonathanoheix/face-expression-recognition-dataset">Click Here</a> to  Download Dataset</p><br>
-=======
 <p> <a href="https://www.kaggle.com/jonathanoheix/face-expression-recognition-dataset">Click Here</a> to  Download Dataset</p>
-<p> <a href="https://www.circuito.io/app?components=513,11028,11050,11574,360216"> Click Here </a> For Health Band circuit Design</p
+<p> <a href="https://www.circuito.io/app?components=513,11028,11050,11574,360216"> Click Here </a> For Health Band circuit Design<br>
+  <a href="https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/"> Click Here </a> To know How to add NodeMCU Board to Arduino IDE</p>
 <br>
->>>>>>> 10f4d98fd3c4af48e94b47eddeec84e9d8e806d0
+
 <p>Create Account in <a href="https://mydevices.com/"> Cayenne IOT</a> and modify API key to get real time data to your account</p><br>
 <p> <a href="https://www.youtube.com/watch?v=Q3JbyTyL9LQ&t=135s">Click Here </a>For Demo Video</p>
