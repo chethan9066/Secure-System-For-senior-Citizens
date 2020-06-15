@@ -12,7 +12,11 @@ import numpy as np
 import os 
 import time
 
+<<<<<<< HEAD
 recognizer = cv2.face.LBPHFaceRecognizer_create()
+=======
+recognizer = cv2.face_LBPHFaceRecognizer.create()
+>>>>>>> 10f4d98fd3c4af48e94b47eddeec84e9d8e806d0
 recognizer.read('trainer/trainer.h5')
 cascadePath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath);
@@ -31,7 +35,11 @@ wait=0
 names = ['','Chethan']
 
 # Initialize and start realtime video capture
+<<<<<<< HEAD
 cam = cv2.VideoCapture(-1)
+=======
+cam = cv2.VideoCapture(0)
+>>>>>>> 10f4d98fd3c4af48e94b47eddeec84e9d8e806d0
 cam.set(3, 640) # set video widht
 cam.set(4, 480) # set video height
 
@@ -97,7 +105,11 @@ while True:
         print("\nYour a known person so going evaluate your Face Expr")
         cam.release()
         cv2.destroyAllWindows()
+<<<<<<< HEAD
         exec(open("/home/chethan/Desktop/test/Emotion-detection/src/get_face_expr.py").read())
+=======
+        exec(open("get_face_expr.py").read())
+>>>>>>> 10f4d98fd3c4af48e94b47eddeec84e9d8e806d0
         
         
     k = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
