@@ -11,7 +11,7 @@ Folder Strucure For Face Expression Detection:<br>
 *DataSet/Data/face-expression-recognition-dataset/images/validation*<br>
   <br>    
 <b> Needed Library For Health Band </b><br>
-------------------------------------------<br>
+----------------------------------------------<br>
 1.DallasTemprature<br>
 2.Cayenne MQTTP<br>
 3.One Wire<br>
