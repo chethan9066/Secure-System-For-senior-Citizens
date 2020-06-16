@@ -21,21 +21,16 @@ from keras.layers import MaxPooling2D
 from keras.preprocessing.image import ImageDataGenerator
 from keras.applications import VGG16
 import os
-<<<<<<< HEAD
-=======
 import threading
 from twilio.rest import Client #Call API
->>>>>>> 10f4d98fd3c4af48e94b47eddeec84e9d8e806d0
 #importing SMTP Library
 import smtplib
 from string import Template
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-<<<<<<< HEAD
-base_path="/home/chethan/Desktop/test/Emotion-detection/src/data/face-expression-recognition-dataset/images/images/"
-=======
 
->>>>>>> 10f4d98fd3c4af48e94b47eddeec84e9d8e806d0
+base_path="/home/chethan/Desktop/test/Emotion-detection/src/data/face-expression-recognition-dataset/images/images/"
+
 
 def get_contacts(filename):
             """
@@ -62,17 +57,15 @@ def read_template(filename):
             return Template(template_file_content)
 
 def main():
-<<<<<<< HEAD
+
             MY_ADDRESS = 'securesystem57@gmail.com'
             PASSWORD = 'securesystem2020'
             names, emails = get_contacts('/home/chethan/Desktop/test/Emotion-detection/src/contacts.txt') # read contacts
             message_template = read_template('/home/chethan/Desktop/test/Emotion-detection/src/msg.txt')
-=======
             MY_ADDRESS = os.environ['EMAIL']
             PASSWORD = os.environ['EMAIL_PWD']
             names, emails = get_contacts('contacts.txt') # read contacts
             message_template = read_template('msg.txt')
->>>>>>> 10f4d98fd3c4af48e94b47eddeec84e9d8e806d0
 
             # set up the SMTP server
             s = smtplib.SMTP('smtp.gmail.com', 587)
@@ -104,7 +97,6 @@ def main():
             # Terminate the SMTP session and close the connection
             s.quit()
 
-<<<<<<< HEAD
 def send_mail():
 
         if __name__ == '__main__':
@@ -112,7 +104,7 @@ def send_mail():
 
 # Define data generators
 train_dir = base_path+'train'
-=======
+
 
 def send_mail():
       if __name__ == '__main__':
@@ -161,7 +153,6 @@ validation_generator = val_datagen.flow_from_directory(
         class_mode='categorical')
 =======
         class_mode='categorical')"""
->>>>>>> 10f4d98fd3c4af48e94b47eddeec84e9d8e806d0
 
 # Create the model
 model = Sequential()
@@ -182,11 +173,8 @@ model.add(Dense(1024, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(7, activation='softmax'))
 
-<<<<<<< HEAD
 model.load_weights('/home/chethan/Desktop/test/Emotion-detection/src/data/Model_Save/model.h5')
-=======
 model.load_weights('Model_Save/model.h5')
->>>>>>> 10f4d98fd3c4af48e94b47eddeec84e9d8e806d0
 
 # prevents openCL usage and unnecessary logging messages
 cv2.ocl.setUseOpenCL(False)
@@ -202,11 +190,9 @@ while True:
     frame = imutils.resize(frame, width=720)
     if not ret:
         break
-<<<<<<< HEAD
     facecasc = cv2.CascadeClassifier('/home/chethan/Desktop/test/Emotion-detection/src/haarcascade_frontalface_default.xml')
-=======
+
     facecasc = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
->>>>>>> 10f4d98fd3c4af48e94b47eddeec84e9d8e806d0
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = facecasc.detectMultiScale(gray,scaleFactor=1.3, minNeighbors=5)
 
@@ -225,11 +211,10 @@ while True:
         cv2.putText(frame, emotion_dict[maxindex], (x+10, y-60), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
 
     cv2.imshow('Video', cv2.resize(frame,(720,620),interpolation = cv2.INTER_CUBIC))
-<<<<<<< HEAD
     if(count_sad>=5):
         send_mail()
         print("Mail Sent successfully")
-=======
+
    
     if(count_sad>=5 and count_sad < 10):
         mail_thread=threading.Thread(target=send_mail)
@@ -238,7 +223,6 @@ while True:
     if(count_sad>=30): #if Sadness continue then call to care taker
         call_thread=threading.Thread(target=make_phone_call)
         call_thread.start()
->>>>>>> 10f4d98fd3c4af48e94b47eddeec84e9d8e806d0
         count_sad=0 #intialize to zero after notify
 
     k = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
