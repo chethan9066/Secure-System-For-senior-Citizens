@@ -126,7 +126,6 @@ def make_phone_call():
     
 # Define data generators
 """train_dir = base_path+'train'
->>>>>>> 10f4d98fd3c4af48e94b47eddeec84e9d8e806d0
 val_dir = base_path+'validation'
 
 num_train = len(train_dir)
