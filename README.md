@@ -9,7 +9,17 @@ Run **Face_Emotion_Detection/3.ipynb** For Detect Your Face and analyze the Face
 Folder Strucure For Face Expression Detection:<br>
 *DataSet/Data/face-expression-recognition-dataset/images/train*<br>
 *DataSet/Data/face-expression-recognition-dataset/images/validation*<br>
-  <br>    
+  <br>
+<b> Required hardwares: </b><br>
+1. NodeMCU 
+2. DS18B20 temprature sensor
+3. SparkFun MPU-6050 - Accelerometer and Gyro
+4. Heart Rate Pulse Sensor
+5. 4.7K Ohm Resistor
+6. BreadBoard
+7. Rasberry Pi for face expression evaluation <br>
+8. Rasberry Pi camera module
+
 <b> Needed Library For Health Band </b><br>
 ----------------------------------------------<br>
 1.DallasTemprature<br>
