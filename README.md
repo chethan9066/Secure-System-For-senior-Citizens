@@ -10,7 +10,8 @@ Folder Strucure For Face Expression Detection:<br>
 *DataSet/Data/face-expression-recognition-dataset/images/train*<br>
 *DataSet/Data/face-expression-recognition-dataset/images/validation*<br>
   <br>
-<b> Required hardwares: </b><br>
+<b> Required hardwares: </b> <br>
+--------------------------------<br>
 1. NodeMCU 
 2. DS18B20 temprature sensor
 3. SparkFun MPU-6050 - Accelerometer and Gyro
