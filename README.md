@@ -34,5 +34,14 @@ Folder Strucure For Face Expression Detection:<br>
   <a href="https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/"> Click Here </a> To know How to add NodeMCU Board to Arduino IDE</p>
 <br>
 
+<b> Needed Library For Face Emotion Detection </b><br>
+----------------------------------------------<br>
+1. Anaconda (anaconda comes with most libraries installed with it)
+2. opencv-python
+3. opencv-contrib-python
+4. imutils
+5. keras
+6. tensorflow
+<br>
 <p>Create Account in <a href="https://mydevices.com/"> Cayenne IOT</a> and modify API key to get real time data to your account</p><br>
 <p> <a href="https://www.youtube.com/watch?v=Q3JbyTyL9LQ&t=135s">Click Here </a>For Demo Video</p>
