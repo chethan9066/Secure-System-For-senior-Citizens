@@ -1,14 +1,14 @@
 # Secure System For Senior Citizen's 
 
-To know HeartBeat and Body Temprature save and run **Health_Band/Health_Band.ino** File in NodeMCU<br> 
-To Train The Model Run **Face_Emotion_Detection/FacialExpressionRecognition.ipynb**<br>
-Run **Face_Emotion_Detection/1.ipynb** and Add Your Face to Known Persons list<br>
-Run **Face_Emotion_Detection/2.ipynb** For Train Your Face to Model<br>
-Run **Face_Emotion_Detection/3.ipynb** For Detect Your Face and analyze the Face Expression if Your a known Person (set your name in id veriable)<br>
+To know HeartBeat and Body Temprature save and run `Health_Band/Health_Band.ino` File in NodeMCU<br> 
+To Train The Model Run `Face_Emotion_Detection/FacialExpressionRecognition.ipynb`<br>
+Run `Face_Emotion_Detection/1.ipynb` and Add Your Face to Known Persons list<br>
+Run `Face_Emotion_Detection/2.ipynb` For Train Your Face to Model<br>
+Run `Face_Emotion_Detection/3.ipynb` For Detect Your Face and analyze the Face Expression if Your a known Person (set your name in id veriable)<br>
 
 Folder Strucure For Face Expression Detection:<br>
-*DataSet/Data/face-expression-recognition-dataset/images/train*<br>
-*DataSet/Data/face-expression-recognition-dataset/images/validation*<br>
+`DataSet/Data/face-expression-recognition-dataset/images/train`<br>
+`DataSet/Data/face-expression-recognition-dataset/images/validation`<br>
   <br>
 <b> Required hardwares: </b> <br>
 --------------------------------<br>
